@@ -9,3 +9,8 @@ tripNViewControllers.controller('LoginCtrl', ['$scope',
 	$scope.username = "toto";
 	$scope.password = "tata";
 }]);
+
+tripNViewControllers.controller('PoiCtrl', ['$scope',
+  function ($scope) {
+
+}]);
