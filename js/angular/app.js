@@ -1,4 +1,5 @@
 var tripNViewApp = angular.module('tripNViewApp', [
+  'tripnwin.config',
   'ngRoute',
   'tripNViewControllers'
 ]);
@@ -22,7 +23,7 @@ tripNViewApp.config(['$routeProvider',
         templateUrl: 'js/partials/loose.html',
         controller: 'LooseCtrl'
       })
-      
+
           .when('/win', {
         templateUrl: 'js/partials/win.html',
         controller: 'WinCtrl'

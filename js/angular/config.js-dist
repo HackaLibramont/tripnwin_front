@@ -1,0 +1,4 @@
+'use strict';
+
+angular.module('tripnwin.config', [])
+  .constant('API_BASE_URL', 'http://api.tripnwin.local/');
