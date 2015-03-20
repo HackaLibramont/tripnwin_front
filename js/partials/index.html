@@ -7,7 +7,7 @@
 		<a href="#/poi" >POI<a/>
                 <a href="#/loose" >Perdu<a/>
                     <a href="#/win" >Win<a/>
-                    
+
 		</p>
         <p><a class="btn btn-primary btn-lg" href="#" role="button">Entrer</a></p>
       </div>
@@ -16,6 +16,14 @@
     <div class="container">
       <!-- Example row of columns -->
       <div class="row">
+
+        <!-- MAP -->
+        <div ng-controller="MapCtrl">
+          <leaflet height="400px" center="center"></leaflet>
+        </div>
+
+        <!-- END MAP -->
+
         <div class="col-md-4">
           <h2>Tourisme</h2>
           <p>Le Lorem Ipsum est simplement du faux texte employ� dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les ann�es 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour r�aliser un livre sp�cimen de polices de texte.</p>

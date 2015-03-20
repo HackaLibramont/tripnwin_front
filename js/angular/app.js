@@ -1,7 +1,8 @@
 var tripNViewApp = angular.module('tripNViewApp', [
   'tripnwin.config',
   'ngRoute',
-  'tripNViewControllers'
+  'tripNViewControllers',
+  'leaflet-directive'
 ]);
 
 tripNViewApp.config(['$routeProvider',
