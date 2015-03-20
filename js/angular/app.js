@@ -14,6 +14,10 @@ tripNViewApp.config(['$routeProvider',
         templateUrl: 'js/partials/login.html',
         controller: 'LoginCtrl'
       })
+	  .when('/poi', {
+        templateUrl: 'js/partials/poi.html',
+        controller: 'PoiCtrl'
+      })
       .otherwise({
         redirectTo: '/index'
       });
