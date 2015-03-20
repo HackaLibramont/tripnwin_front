@@ -6,8 +6,7 @@ tripNViewControllers.controller('IndexCtrl', ['$scope',
 
 tripNViewControllers.controller('LoginCtrl', ['$scope',
   function ($scope) {
-	$scope.username = "toto";
-	$scope.password = "tata";
+	
 }]);
 
 tripNViewControllers.controller('PoiCtrl', ['$scope',
