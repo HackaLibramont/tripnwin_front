@@ -14,3 +14,13 @@ tripNViewControllers.controller('PoiCtrl', ['$scope',
   function ($scope) {
 
 }]);
+
+tripNViewControllers.controller('LooseCtrl', ['$scope',
+  function ($scope) {
+
+}]);
+
+tripNViewControllers.controller('WinCtrl', ['$scope',
+  function ($scope) {
+
+}]);
