@@ -14,7 +14,7 @@ tripNViewApp.config(['$routeProvider',
         templateUrl: 'js/partials/login.html',
         controller: 'LoginCtrl'
       })
-	  .when('/poi', {
+	  .when('/poi/:poiID', {
         templateUrl: 'js/partials/poi.html',
         controller: 'PoiCtrl'
       })
