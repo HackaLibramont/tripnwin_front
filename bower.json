@@ -8,6 +8,7 @@
     "bootstrap": "~3",
     "leaflet": "~0.7",
     "angular-leaflet-directive": "latest",
-    "font-awesome": "latest"
+    "font-awesome": "latest",
+    "angular-qrcode" : "latest"
   }
 }
