@@ -33,3 +33,9 @@ tripNViewApp.config(['$routeProvider',
         redirectTo: '/index'
       });
   }]);
+
+tripNViewApp.run(
+            ['$http',
+    function( $http ) {
+        $http.defaults.headers.common['Authorization'] = 'Basic bmljb2xhcy5jaGFybG90QGdtYWlsLmNvbTpzZWNyZXQ=';
+    }]);
