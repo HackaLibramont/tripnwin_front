@@ -22,6 +22,8 @@ tripNViewControllers.controller('MapCtrl', ['$scope', '$http', '$q', 'Poi', 'lea
     };
 
     $scope.defaults = {
+      maxWidth : 80,
+      minWidth : 50,
       maxZoom : 20,
       minZoom : 10,
       tileLayerOptions: {
@@ -85,7 +87,7 @@ tripNViewControllers.controller('MapCtrl', ['$scope', '$http', '$q', 'Poi', 'lea
           $scope.markers[poi.id] = {
             lat     : parseFloat(poi.latitude),
             lng     : parseFloat(poi.longitude),
-            message : '<div class="row"><h4 class="caption">' + poi.name + '</h4></div><div class="row"><img src="' + poi.photo + '" class="img-thumbnail col-md-6"><div class="col-md-6"><p>' + poi.description.substring(0,60)+ '...</p></div></div><div class="row"><a class="btn btn-primary center-block" href="#/poi/' + poi.id +'">Plus...</a></div></p>',
+            message : '<h5>' + poi.name + '</h5><div class="row"><div class="col-xs-4"><img src="' + poi.photo + '" class="img-thumbnail" style="max-width: 64px; max-height: 64px;"></div><div class="col-offset-xs-5 col-xs-8"><p>' + poi.description.substring(0,100)+ '...</p></div></div><div><p><a class="btn center-block" href="#/poi/' + poi.id +'">Afficher</a></p>',
             focus: false,
             draggable: false,
             icon : local_icons.blue_icon
@@ -101,13 +103,13 @@ tripNViewControllers.controller('MapCtrl', ['$scope', '$http', '$q', 'Poi', 'lea
 
     getPosition().then(function(position){
 
-      // $scope.center.lat = position.coords.latitude;
-      // $scope.center.lng = position.coords.longitude;
+      $scope.center.lat = position.coords.latitude;
+      $scope.center.lng = position.coords.longitude;
 
-      $scope.center.lat = 50.006055;
-      $scope.center.lng = 5.718304;
+      // $scope.center.lat = 50.006055;
+      // $scope.center.lng = 5.718304;
 
-      $scope.center.zoom = 10;
+      $scope.center.zoom = 12;
       $scope.center.focus = true;
       $scope.center.draggable= false;
 
