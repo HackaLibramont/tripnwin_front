@@ -9,11 +9,14 @@ tripNViewControllers.controller('MapCtrl', ['$scope', '$http', '$q', 'Poi', func
 
     var local_icons = {
         default_icon: {},
-        div_icon: {
-            type: 'div',
-            iconSize: [230, 0],
-            html: 'Using <strong>Bold text as an icon</strong>: Lisbon',
-            popupAnchor:  [0, 0]
+        user_icon: {
+          iconUrl : 'img/pin-green.png'
+        },
+        blue_icon: {
+          iconUrl : 'img/pin-blue.png'
+        },
+        coupon_icon: {
+          iconUrl : 'img/pin-blue-coupon.png'
         },
     };
 
@@ -53,7 +56,7 @@ tripNViewControllers.controller('MapCtrl', ['$scope', '$http', '$q', 'Poi', func
             message : '<h5>' + poi.name + '</h5><p>' + poi.description.substring(0,40)+ '... <a href="#/poi/' + poi.id +'">Plus...</a></p>',
             focus: false,
             draggable: false,
-            icon : local_icons.default_icon
+            icon : local_icons.blue_icon
           }
 
         });
@@ -64,7 +67,7 @@ tripNViewControllers.controller('MapCtrl', ['$scope', '$http', '$q', 'Poi', func
 
       // $scope.center.lat = position.coords.latitude;
       // $scope.center.lng = position.coords.longitude;
-      // 50.006055, 5.718304
+
       $scope.center.lat = 50.006055;
       $scope.center.lng = 5.718304;
 
@@ -72,7 +75,7 @@ tripNViewControllers.controller('MapCtrl', ['$scope', '$http', '$q', 'Poi', func
       $scope.center.focus = true;
       $scope.center.draggable= false;
 
-      $scope.center.icon = local_icons.div_icon;
+      $scope.center.icon = local_icons.user_icon;
 
       $scope.markers[0] = $scope.center
 
