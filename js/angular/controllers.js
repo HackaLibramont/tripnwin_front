@@ -6,7 +6,7 @@ tripNViewControllers.controller('IndexCtrl',
     $scope.pois = Poi.list();
 }]);
 
-tripNViewControllers.controller('MapCtrl', ['$scope', '$http', '$q', function ($scope, $http, $q) {
+tripNViewControllers.controller('MapCtrl', ['$scope', '$http', '$q', ,'Poi', function ($scope, $http, $q, Poi) {
 
     var local_icons = {
         default_icon: {},
@@ -40,22 +40,23 @@ tripNViewControllers.controller('MapCtrl', ['$scope', '$http', '$q', function ($
     $scope.markers = [];
     $scope.icons = local_icons;
 
-    var url = 'http://hackathon-server.vm/tripnwin_api/web/index.php/pois';
+    Poi.list(function(data){
 
-    $http.get(url).success(function(data){
+      console.log(data);
+
       data.forEach(function(poi, index, array){
 
         $scope.markers[poi.id] = {
           lat     : parseFloat(poi.latitude),
           lng     : parseFloat(poi.longitude),
-          message : '<h5>' + poi.name + '</h5><p>' + poi.description.substring(0,40)+ '...</p><a href="/poi/' + poi.id +'">Plus...</a>',
+          message : '<h5>' + poi.name + '</h5><p>' + poi.description.substring(0,40)+ '... <a href="/poi/' + poi.id +'">Plus...</a></p>',
           focus: true,
           draggable: false,
           icon : local_icons.default_icon
         }
 
       });
-    })
+    });
 
     var getPosition = function(){
 
