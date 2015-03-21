@@ -2,11 +2,22 @@
     <div class="jumbotron">
       <div class="container">
         <h1>Trip'N'Win</h1>
-       
+
+        <ul>
+          <li ng-repeat="poi in pois">{{ poi.name }}</li>
+        </ul>
+
+
+        <p>
+		<a href="#/login" >login<a/>
+		<a href="#/poi" >POI<a/>
+                <a href="#/loose" >Perdu<a/>
+                    <a href="#/win" >Win<a/>
+
+		</p>
         <p><a class="btn btn-primary btn-lg" href="#" role="button">Entrer</a></p>
       </div>
     </div>
-
 
     <div class="container">
       <!-- Example row of columns -->
@@ -16,7 +27,6 @@
         <div ng-controller="MapCtrl">
           <leaflet height="400px" center="center" markers="markers"></leaflet>
         </div>
-
         <!-- END MAP -->
 
         <div class="col-md-4">
