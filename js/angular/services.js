@@ -11,6 +11,45 @@ angular.module('tripnwin.services', ['ngResource'])
 
     return $resource(API_BASE_URL+'pois/:poi_id', {}, {
       list: { method: 'GET', isArray: true },
-      read: { method: 'GET' },
+      read: { method: 'GET' }
+    });
+  }])
+
+
+  /**
+   * Coupon ngResource
+   */
+  .factory('Coupon',
+            ['$resource', 'API_BASE_URL',
+    function( $resource ,  API_BASE_URL ) {
+
+    return $resource(API_BASE_URL+'pois/:poi_id/coupons', {}, {
+      list: { method: 'GET', isArray: true }
+    });
+  }])
+
+
+  /**
+   * CouponPlay ngResource
+   */
+  .factory('CouponPlay',
+            ['$resource', 'API_BASE_URL',
+    function( $resource ,  API_BASE_URL ) {
+
+    return $resource(API_BASE_URL+'pois/:poi_id/coupons/:coupon_id/play', {}, {
+      play: { method: 'POST' }
+    });
+  }])
+
+
+  /**
+   * Question ngResource
+   */
+  .factory('Question',
+            ['$resource', 'API_BASE_URL',
+    function( $resource ,  API_BASE_URL ) {
+
+    return $resource(API_BASE_URL+'pois/:poi_id/questions/random', {}, {
+      read: { method: 'GET' }
     });
   }]);
