@@ -53,4 +53,16 @@ angular.module('tripnwin.services', ['ngResource'])
     return $resource(API_BASE_URL+'pois/:poi_id/questions/random', {}, {
       read: { method: 'GET' }
     });
-  }]);
+  }])
+
+
+  /**
+   * Page service
+   */
+  .factory('Page', function() {
+    var title = 'Trip\'N\'win';
+    return {
+      title: function() { return title; },
+      setTitle: function(newTitle) { title = newTitle }
+    };
+});

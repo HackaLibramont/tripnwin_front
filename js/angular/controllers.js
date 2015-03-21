@@ -131,9 +131,11 @@ tripNViewControllers.controller('LoginCtrl', ['$scope',
 
 
 tripNViewControllers.controller('PoiCtrl',
-          ['$location', '$routeParams', '$scope', 'Coupon', 'Poi',
-  function( $location ,  $routeParams ,  $scope ,  Coupon ,  Poi ) {
-    $scope.poi = Poi.read({ poi_id: $routeParams.poiId });
+          ['$location', '$routeParams', '$scope', 'Coupon', 'Page', 'Poi',
+  function( $location ,  $routeParams ,  $scope ,  Coupon ,  Page ,  Poi ) {
+    $scope.poi = Poi.read({ poi_id: $routeParams.poiId }, function() {
+      Page.setTitle($scope.poi.name);
+    });
     $scope.coupons = Coupon.list({ poi_id: $routeParams.poiId, user_id: 1 });
 
     var params = $location.search();
@@ -144,7 +146,7 @@ tripNViewControllers.controller('PoiCtrl',
 
 tripNViewControllers.controller('PlayCtrl',
           ['$location', '$routeParams', '$scope', 'Coupon', 'CouponPlay', 'Question',
-  function( $location ,  $routeParams ,  $scope , Coupon, CouponPlay ,  Question) {
+  function( $location ,  $routeParams ,  $scope ,  Coupon,   CouponPlay ,  Question ) {
 
     // Init
     $scope.init = function() {
@@ -174,4 +176,12 @@ tripNViewControllers.controller('PlayCtrl',
         }
       );
     };
+}]);
+
+
+
+tripNViewControllers.controller('titleCtrl',
+          ['$scope', 'Page',
+  function( $scope ,  Page ) {
+    $scope.Page = Page;
 }]);
