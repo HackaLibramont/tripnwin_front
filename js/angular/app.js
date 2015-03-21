@@ -7,25 +7,28 @@ var tripNViewApp = angular.module('tripNViewApp', [
 
 tripNViewApp.config(['$routeProvider',
   function($routeProvider) {
-    $routeProvider.
-      when('/index', {
+    $routeProvider
+      .when('/index', {
         templateUrl: 'js/partials/index.html',
         controller: 'IndexCtrl'
       })
-	  .when('/login', {
+      .when('/login', {
         templateUrl: 'js/partials/login.html',
         controller: 'LoginCtrl'
       })
-	  .when('/poi/:poiId', {
+      .when('/poi/:poiId', {
         templateUrl: 'js/partials/poi.html',
         controller: 'PoiCtrl'
       })
-      	  .when('/loose', {
+      .when('/poi/:poiId/play/:couponId', {
+        templateUrl: 'js/partials/play.html',
+        controller: 'PlayCtrl'
+      })
+      .when('/lost', {
         templateUrl: 'js/partials/loose.html',
         controller: 'LooseCtrl'
       })
-
-          .when('/win', {
+      .when('/won', {
         templateUrl: 'js/partials/win.html',
         controller: 'WinCtrl'
       })

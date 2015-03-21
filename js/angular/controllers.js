@@ -86,12 +86,41 @@ tripNViewControllers.controller('LoginCtrl', ['$scope',
 
 }]);
 
+
+
 tripNViewControllers.controller('PoiCtrl',
           ['$routeParams', '$scope', 'Coupon', 'Poi',
   function( $routeParams ,  $scope ,  Coupon ,  Poi ) {
     $scope.poi = Poi.read({ poi_id: $routeParams.poiId });
-    $scope.coupons = Coupon.list({ poi_id: $routeParams.poiId });
+    $scope.coupons = Coupon.list({ poi_id: $routeParams.poiId, user_id: 1 });
 }]);
+
+
+
+tripNViewControllers.controller('PlayCtrl',
+          ['$location', '$routeParams', '$scope', 'CouponPlay', 'Question',
+  function( $location ,  $routeParams ,  $scope ,  CouponPlay ,  Question ) {
+
+    // Retrieve random question
+    $scope.question = Question.read({ poi_id: $routeParams.poiId });
+
+    // Play!
+    $scope.play = function(choice) {
+      CouponPlay.play(
+        { poi_id: $routeParams.poiId, coupon_id: $routeParams.couponId, user_id: 1 },
+        { question_id: $scope.question.id, answer: $scope.question.choices[choice] },
+        function(response) {
+          if (response.result == 'won') {
+            $location.path('/won');
+          } else {
+            $location.path('/lost');
+          }
+        }
+      );
+    };
+}]);
+
+
 
 tripNViewControllers.controller('LooseCtrl', ['$scope',
   function ($scope) {
