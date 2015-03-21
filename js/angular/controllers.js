@@ -17,7 +17,7 @@ tripNViewControllers.controller('MapCtrl', ['$scope', '$http', '$q', 'Poi', 'lea
           popupAnchor:  [15, 0]
         },
         coupon_icon: {
-          iconUrl : 'img/pin-blue-coupon.png',
+          iconUrl : 'img/pin-yellow.png',
         },
     };
 
@@ -85,10 +85,14 @@ tripNViewControllers.controller('MapCtrl', ['$scope', '$http', '$q', 'Poi', 'lea
           $scope.markers[poi.id] = {
             lat     : parseFloat(poi.latitude),
             lng     : parseFloat(poi.longitude),
-            message : '<h5>' + poi.name + '</h5><p>' + poi.description.substring(0,40)+ '... <a href="#/poi/' + poi.id +'">Plus...</a></p>',
+            message : '<div class="row"><h4 class="caption">' + poi.name + '</h4></div><div class="row"><img src="' + poi.photo + '" class="img-thumbnail col-md-6"><div class="col-md-6"><p>' + poi.description.substring(0,60)+ '...</p></div></div><div class="row"><a class="btn btn-primary center-block" href="#/poi/' + poi.id +'">Plus...</a></div></p>',
             focus: false,
             draggable: false,
             icon : local_icons.blue_icon
+          }
+
+          if(poi.nb_coupons != 0) {
+            $scope.markers[poi.id].icon = local_icons.coupon_icon
           }
 
         });
