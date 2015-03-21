@@ -3,16 +3,19 @@
     <h1>{{ poi.name }}</h1>
 
     <p>{{ poi.description }}</p>
+    <p>&nbsp;</p>
 
     <div class="row">
       <div class="col-md-6">
-        <img src="/img/atomium.jpg" alt="Image"/>
+        <a href="#" class="thumbnail">
+          <img src="{{ poi.photo }}" alt="{{ poi.name }}">
+        </a>
       </div>
       <div class="col-md-6">
         <h3>Coupons à gagner :</h3>
         <div class="list-group">
           <a href="#/poi/{{ poi.id }}/play/{{ coupon.id }}" class="list-group-item" ng-class="{ 'disabled': coupon.already_won }" ng-repeat="coupon in coupons">
-            <h4 class="list-group-item-heading">{{ coupon.name }}</h4>
+            <h4 class="list-group-item-heading"><i class="fa fa-ticket"></i> {{ coupon.name }}</h4>
             <p class="list-group-item-text">{{ coupon.gain }}</p>
           </a>
         </div>
