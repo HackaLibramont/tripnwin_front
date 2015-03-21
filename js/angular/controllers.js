@@ -3,6 +3,9 @@ var tripNViewControllers = angular.module('tripNViewControllers', ['tripnwin.ser
 tripNViewControllers.controller('IndexCtrl',
            ['$scope', 'Poi',
   function ( $scope ,  Poi ) {
+    $scope.pois = Poi.list(function() {
+      console.log($scope.pois);
+    });
 }]);
 
 tripNViewControllers.controller('MapCtrl', ['$scope', '$http', '$q', 'Poi', function ($scope, $http, $q, Poi) {
