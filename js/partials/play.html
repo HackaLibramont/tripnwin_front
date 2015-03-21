@@ -25,19 +25,19 @@
           <p>Bravo vous avez bien répondu à la question.</p>
           <p>Partagez cet instant de gloire pour obtenir votre coupon offert par {{ coupon.name }}</p>
           <a href="#" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-share"></span> Partager</a>
-          <div class="thumbnail clearfix">
-              <div class="row">
-                <div class="col-md-4">
-                  <qrcode version="2" error-correction-level="M" size="150" data="string" class="pull-left"></qrcode>
+          <p>
+            <div class="thumbnail">
+                <div class="row">
+                  <div class="col-xs-2">
+                    <qrcode version="2" error-correction-level="M" size="150" data="string"></qrcode>
+                  </div>
+                  <div class="col-xs-offset-4 col-xs-6">
+                    <h3>{{ coupon.name }}</h3>
+                    <h4>{{ coupon.gain }}</h4>
+                  </div>
                 </div>
-                <div class="col-md-offset-5 col-md-6">
-                  <h3>{{ coupon.name }}</h3>
-                  <h4>{{ coupon.gain }}</h4>
-                </div>
-              </div>
             </div>
-          </div>
-
+          </p>
       </div>
     </div>
   </section>
