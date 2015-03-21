@@ -22,24 +22,6 @@ tripNViewControllers.controller('MapCtrl', ['$scope', '$http', '$q', 'Poi', func
     $scope.markers = [];
     $scope.icons = local_icons;
 
-    Poi.list(function(data){
-
-      console.log(data);
-
-      data.forEach(function(poi, index, array){
-
-        $scope.markers[poi.id] = {
-          lat     : parseFloat(poi.latitude),
-          lng     : parseFloat(poi.longitude),
-          message : '<h5>' + poi.name + '</h5><p>' + poi.description.substring(0,40)+ '... <a href="#/poi/' + poi.id +'">Plus...</a></p>',
-          focus: true,
-          draggable: false,
-          icon : local_icons.default_icon
-        }
-
-      });
-    });
-
     var getPosition = function(){
 
       var deferred = $q.defer();
@@ -58,21 +40,43 @@ tripNViewControllers.controller('MapCtrl', ['$scope', '$http', '$q', 'Poi', func
 
     }
 
+    var getMarkers = function() {
+      Poi.list({ latitude : $scope.center.lat , longitude : $scope.center.lng, radius : 50 }, function(data){
+
+        // http://hackathon-server.vm/tripnwin_api/web/index.php/pois?latitude=50.47450000000000&longitude=4.10908000000000&radius=20
+
+        data.forEach(function(poi, index, array){
+
+          $scope.markers[poi.id] = {
+            lat     : parseFloat(poi.latitude),
+            lng     : parseFloat(poi.longitude),
+            message : '<h5>' + poi.name + '</h5><p>' + poi.description.substring(0,40)+ '... <a href="#/poi/' + poi.id +'">Plus...</a></p>',
+            focus: false,
+            draggable: false,
+            icon : local_icons.default_icon
+          }
+
+        });
+      });
+    }
+
     getPosition().then(function(position){
 
       // $scope.center.lat = position.coords.latitude;
       // $scope.center.lng = position.coords.longitude;
+      // 50.006055, 5.718304
+      $scope.center.lat = 50.006055;
+      $scope.center.lng = 5.718304;
 
-      $scope.center.lat = 50.000190;
-      $scope.center.lng = 5.715686;
-
-      $scope.center.zoom = 15;
+      $scope.center.zoom = 10;
       $scope.center.focus = true;
       $scope.center.draggable= false;
 
       $scope.center.icon = local_icons.div_icon;
 
       $scope.markers[0] = $scope.center
+
+      getMarkers();
 
     });
 
