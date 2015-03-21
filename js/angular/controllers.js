@@ -134,8 +134,8 @@ tripNViewControllers.controller('PoiCtrl',
 
 
 tripNViewControllers.controller('PlayCtrl',
-          ['$location', '$routeParams', '$scope', 'CouponPlay', 'Question',
-  function( $location ,  $routeParams ,  $scope ,  CouponPlay ,  Question ) {
+          ['$location', '$routeParams', '$scope', 'Coupon', 'CouponPlay', 'Question',
+  function( $location ,  $routeParams ,  $scope , Coupon, CouponPlay ,  Question) {
 
     // Init
     $scope.init = function() {
@@ -155,6 +155,9 @@ tripNViewControllers.controller('PlayCtrl',
         function(response) {
           if (response.result == 'won') {
             $scope.stage = 'won';
+            Coupon.read({ poi_id: $routeParams.poiId, coupon_id: $routeParams.couponId, user_id: 1 }, function(coupon){
+              $scope.coupon = coupon;
+            })
           } else {
             $scope.stage = 'lost';
 
