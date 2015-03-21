@@ -12,6 +12,10 @@ tripNViewApp.config(['$routeProvider',
         templateUrl: 'js/partials/index.html',
         controller: 'IndexCtrl'
       })
+	  .when('/splash', {
+        templateUrl: 'js/partials/splash.html',
+        controller: 'SplashCtrl'
+      })
       .when('/login', {
         templateUrl: 'js/partials/login.html',
         controller: 'LoginCtrl'
