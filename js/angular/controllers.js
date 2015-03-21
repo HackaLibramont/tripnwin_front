@@ -86,9 +86,11 @@ tripNViewControllers.controller('LoginCtrl', ['$scope',
 
 }]);
 
-tripNViewControllers.controller('PoiCtrl', ['$scope',
-  function ($scope) {
-
+tripNViewControllers.controller('PoiCtrl',
+          ['$routeParams', '$scope', 'Coupon', 'Poi',
+  function( $routeParams ,  $scope ,  Coupon ,  Poi ) {
+    $scope.poi = Poi.read({ poi_id: $routeParams.poiId });
+    $scope.coupons = Coupon.list({ poi_id: $routeParams.poiId });
 }]);
 
 tripNViewControllers.controller('LooseCtrl', ['$scope',

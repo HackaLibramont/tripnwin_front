@@ -1,33 +1,22 @@
 <div class="content">
-<section>
-	<div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-4">
-          <img src="/img/atomium.jpg" alt="Image"/>
-        </div>
-	<div class="col-md-4">
-          
-        </div>
-        <div class="col-md-4">
-            <div id="accordion">
-              <h3>Description</h3>
-              <div>
-                <p>
-                {{description}}
-                </p>
-              </div>
-              <h3>Coupons</h3>
-                <div data-ng-repeat="(coupon,description) in faq">
-                        <img src="{{coupon}}" alt="patenaire"/>
-                        <div><p>{{description}}</p></div>- 
-                </div>
-            </div>
- 
-       </div>
-	   
-        
+  <section class="container">
+    <h1>{{ poi.name }}</h1>
+
+    <p>{{ poi.description }}</p>
+
+    <div class="row">
+      <div class="col-md-6">
+        <img src="/img/atomium.jpg" alt="Image"/>
       </div>
-	</div>
-</section>
+      <div class="col-md-6">
+        <h3>Coupons à gagner :</h3>
+        <div class="list-group">
+          <a href="#" class="list-group-item" ng-repeat="coupon in coupons">
+            <h4 class="list-group-item-heading">{{ coupon.name }}</h4>
+            <p class="list-group-item-text">{{ coupon.gain }}</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
