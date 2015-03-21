@@ -131,10 +131,13 @@ tripNViewControllers.controller('LoginCtrl', ['$scope',
 
 
 tripNViewControllers.controller('PoiCtrl',
-          ['$routeParams', '$scope', 'Coupon', 'Poi',
-  function( $routeParams ,  $scope ,  Coupon ,  Poi ) {
+          ['$location', '$routeParams', '$scope', 'Coupon', 'Poi',
+  function( $location ,  $routeParams ,  $scope ,  Coupon ,  Poi ) {
     $scope.poi = Poi.read({ poi_id: $routeParams.poiId });
     $scope.coupons = Coupon.list({ poi_id: $routeParams.poiId, user_id: 1 });
+
+    var params = $location.search();
+    $scope.via_beacon = params.via_beacon && params.via_beacon;
 }]);
 
 

@@ -1,5 +1,10 @@
 <div class="content">
   <section class="container">
+    <div class="alert alert-success" role="alert" ng-if="via_beacon == true">
+      <i class="fa fa-map-marker"></i>
+      Vous êtes à proximité !
+    </div>
+
     <h1><i class="fa fa-map-marker"></i> {{ poi.name }}</h1>
 
     <p ng-bind-html="poi.description"></p>
@@ -7,16 +12,14 @@
 
     <div class="row">
       <div class="col-md-6">
-				<div class="thumbnail">
-        <!-- <a href="#" class="thumbnail"> -->
+        <div class="thumbnail">
           <img ng-src="{{ poi.photo }}" alt="{{ poi.name }}">
-        <!-- </a> -->
-			</div>
+         </div>
       </div>
       <div class="col-md-6">
         <h3>Coupons à gagner :</h3>
         <div class="list-group">
-          <a href="#/poi/{{ poi.id }}/play/{{ coupon.id }}" class="list-group-item" ng-class="{ 'disabled': coupon.already_won }" ng-repeat="coupon in coupons">
+          <a ng-href="{{ via_beacon == true && !coupon.already_won && '#/poi/'+poi.id+'/play/'+coupon.id || '' }}" class="list-group-item" ng-class="{ 'disabled': coupon.already_won }" ng-repeat="coupon in coupons">
             <h4 class="list-group-item-heading"><i class="fa fa-ticket"></i> {{ coupon.name }}</h4>
             <p class="list-group-item-text">{{ coupon.gain }}</p>
           </a>
