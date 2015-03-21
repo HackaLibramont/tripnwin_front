@@ -2,7 +2,8 @@ var tripNViewApp = angular.module('tripNViewApp', [
   'tripnwin.config',
   'ngRoute',
   'tripNViewControllers',
-  'leaflet-directive'
+  'leaflet-directive',
+  'monospaced.qrcode'
 ]);
 
 tripNViewApp.config(['$routeProvider',
@@ -11,10 +12,6 @@ tripNViewApp.config(['$routeProvider',
       .when('/index', {
         templateUrl: 'js/partials/index.html',
         controller: 'IndexCtrl'
-      })
-	  .when('/splash', {
-        templateUrl: 'js/partials/splash.html',
-        controller: 'SplashCtrl'
       })
       .when('/login', {
         templateUrl: 'js/partials/login.html',
