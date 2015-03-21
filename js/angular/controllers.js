@@ -48,15 +48,13 @@ tripNViewControllers.controller('MapCtrl', ['$scope', '$http', '$q', function ($
         $scope.markers[poi.id] = {
           lat     : parseFloat(poi.latitude),
           lng     : parseFloat(poi.longitude),
-          message : poi.name,
+          message : '<h5>' + poi.name + '</h5><p>' + poi.description.substring(0,40)+ '...</p><a href="/poi/' + poi.id +'">Plus...</a>',
           focus: true,
           draggable: false,
           icon : local_icons.default_icon
         }
 
       });
-
-      console.log($scope.markers);
     })
 
     var getPosition = function(){
