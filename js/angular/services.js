@@ -23,8 +23,9 @@ angular.module('tripnwin.services', ['ngResource'])
             ['$resource', 'API_BASE_URL',
     function( $resource ,  API_BASE_URL ) {
 
-    return $resource(API_BASE_URL+'pois/:poi_id/coupons', {}, {
-      list: { method: 'GET', isArray: true }
+    return $resource(API_BASE_URL+'pois/:poi_id/coupons/:coupon_id', {}, {
+      list: { method: 'GET', isArray: true },
+      read: { method: 'GET' }
     });
   }])
 
