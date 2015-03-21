@@ -5,7 +5,7 @@ tripNViewControllers.controller('IndexCtrl',
   function ( $scope ) {
 }]);
 
-tripNViewControllers.controller('MapCtrl', ['$scope', '$http', '$q', 'Poi', function ($scope, $http, $q, Poi) {
+tripNViewControllers.controller('MapCtrl', ['$scope', '$http', '$q', 'Poi', 'leafletData', function ($scope, $http, $q, Poi, leafletData) {
 
     var local_icons = {
         default_icon: {},
@@ -14,11 +14,42 @@ tripNViewControllers.controller('MapCtrl', ['$scope', '$http', '$q', 'Poi', func
         },
         blue_icon: {
           iconUrl : 'img/pin-blue.png',
+          popupAnchor:  [15, 0]
         },
         coupon_icon: {
+          iconUrl : 'img/pin-blue-coupon.png',
         },
     };
 
+    $scope.defaults = {
+      maxZoom : 20,
+      minZoom : 10,
+      tileLayerOptions: {
+          opacity: 0.9,
+          detectRetina: true,
+          reuseTiles: true,
+      },
+      scrollWheelZoom: false
+    };
+
+    $scope.events = {
+      map : {
+        enable : ['dragend'],
+        logic : 'emit'
+      }
+    }
+
+    $scope.$on('leafletDirectiveMap.dragend', function(event){
+        $scope.eventDetected = "MouseMove";
+        leafletData.getMap().then(function(map){
+          var bounds = map.getBounds();
+          var latitude = bounds.getCenter().lat;
+          var longitude = bounds.getCenter().lng;
+
+          getMarkers(latitude,longitude);
+
+        });
+    });
 
     $scope.center = {};
     $scope.markers = [];
@@ -42,10 +73,12 @@ tripNViewControllers.controller('MapCtrl', ['$scope', '$http', '$q', 'Poi', func
 
     }
 
-    var getMarkers = function() {
-      Poi.list({ latitude : $scope.center.lat , longitude : $scope.center.lng, radius : 50 }, function(data){
+    var getMarkers = function(latitude, longitude) {
+      Poi.list({ latitude : latitude , longitude : longitude, radius : 30 }, function(data){
 
         // http://hackathon-server.vm/tripnwin_api/web/index.php/pois?latitude=50.47450000000000&longitude=4.10908000000000&radius=20
+
+        $scope.markers = {};
 
         data.forEach(function(poi, index, array){
 
@@ -78,7 +111,7 @@ tripNViewControllers.controller('MapCtrl', ['$scope', '$http', '$q', 'Poi', func
 
       $scope.markers[0] = $scope.center
 
-      getMarkers();
+      getMarkers($scope.center.lat, $scope.center.lng);
 
     });
 
@@ -124,6 +157,7 @@ tripNViewControllers.controller('PlayCtrl',
             $scope.stage = 'won';
           } else {
             $scope.stage = 'lost';
+
           }
         }
       );
