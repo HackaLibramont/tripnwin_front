@@ -14,6 +14,7 @@ tripNViewControllers.controller('MapCtrl', ['$scope',
       $scope.center.lat = position.coords.latitude;
       $scope.center.lng = position.coords.longitude;
       $scope.center.zoom = 20;
+      $scope.markers.push($scope.center)
     });
 
     angular.extend($scope, {
@@ -24,7 +25,8 @@ tripNViewControllers.controller('MapCtrl', ['$scope',
       },
       defaults: {
           scrollWheelZoom: true
-      }
+      },
+      markers : {}
     });
   }
 
