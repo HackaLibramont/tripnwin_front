@@ -12,7 +12,7 @@
         <h3>Coupons à gagner :</h3>
         <div class="list-group">
           <a href="#/poi/{{ poi.id }}/play/{{ coupon.id }}" class="list-group-item" ng-class="{ 'disabled': coupon.already_won }" ng-repeat="coupon in coupons">
-            <h4 class="list-group-item-heading">{{ coupon.name }}</h4>
+            <h4 class="list-group-item-heading"><i class="fa fa-ticket"></i> {{ coupon.name }}</h4>
             <p class="list-group-item-text">{{ coupon.gain }}</p>
           </a>
         </div>
