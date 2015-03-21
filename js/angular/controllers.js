@@ -6,29 +6,42 @@ tripNViewControllers.controller('IndexCtrl',
     $scope.pois = Poi.list();
 }]);
 
-tripNViewControllers.controller('MapCtrl', ['$scope',
-  function ($scope) {
+tripNViewControllers.controller('MapCtrl', ['$scope', '$q', function ($scope, $q) {
 
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position){
+    $scope.center = {};
+    $scope.markers = {};
+
+    var getPosition = function(){
+
+      var deferred = $q.defer();
+
+      if (navigator.geolocation) {
+
+        navigator.geolocation.getCurrentPosition(function(position){
+
+          deferred.resolve(position);
+
+        });
+
+      }
+
+      return deferred.promise;
+
+    }
+
+    getPosition().then(function(position){
+
       $scope.center.lat = position.coords.latitude;
       $scope.center.lng = position.coords.longitude;
       $scope.center.zoom = 20;
-      $scope.markers.push($scope.center)
-    });
+      $scope.center.focus = true;
+      $scope.center.draggable= false;
 
-    angular.extend($scope, {
-      center: {
-        lat : null,
-        lng : null,
-        zoom : 10
-      },
-      defaults: {
-          scrollWheelZoom: true
-      },
-      markers : {}
+      $scope.markers = {
+        center : $scope.center
+      }
+
     });
-  }
 
 }]);
 
