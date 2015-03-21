@@ -24,14 +24,6 @@ tripNViewApp.config(['$routeProvider',
         templateUrl: 'js/partials/play.html',
         controller: 'PlayCtrl'
       })
-      .when('/lost', {
-        templateUrl: 'js/partials/loose.html',
-        controller: 'LooseCtrl'
-      })
-      .when('/won', {
-        templateUrl: 'js/partials/win.html',
-        controller: 'WinCtrl'
-      })
       .otherwise({
         redirectTo: '/index'
       });

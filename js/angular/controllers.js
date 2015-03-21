@@ -1,11 +1,8 @@
 var tripNViewControllers = angular.module('tripNViewControllers', ['tripnwin.services']);
 
 tripNViewControllers.controller('IndexCtrl',
-           ['$scope', 'Poi',
-  function ( $scope ,  Poi ) {
-    $scope.pois = Poi.list(function() {
-      console.log($scope.pois);
-    });
+           ['$scope',
+  function ( $scope ) {
 }]);
 
 tripNViewControllers.controller('MapCtrl', ['$scope', '$http', '$q', 'Poi', function ($scope, $http, $q, Poi) {
@@ -101,8 +98,15 @@ tripNViewControllers.controller('PlayCtrl',
           ['$location', '$routeParams', '$scope', 'CouponPlay', 'Question',
   function( $location ,  $routeParams ,  $scope ,  CouponPlay ,  Question ) {
 
-    // Retrieve random question
-    $scope.question = Question.read({ poi_id: $routeParams.poiId });
+    // Init
+    $scope.init = function() {
+      // 1st stage
+      $scope.stage = 'play';
+
+      // Retrieve random question
+      $scope.question = Question.read({ poi_id: $routeParams.poiId });
+    };
+    $scope.init();
 
     // Play!
     $scope.play = function(choice) {
@@ -111,23 +115,11 @@ tripNViewControllers.controller('PlayCtrl',
         { question_id: $scope.question.id, answer: $scope.question.choices[choice] },
         function(response) {
           if (response.result == 'won') {
-            $location.path('/won');
+            $scope.stage = 'won';
           } else {
-            $location.path('/lost');
+            $scope.stage = 'lost';
           }
         }
       );
     };
-}]);
-
-
-
-tripNViewControllers.controller('LooseCtrl', ['$scope',
-  function ($scope) {
-
-}]);
-
-tripNViewControllers.controller('WinCtrl', ['$scope',
-  function ($scope) {
-
 }]);
