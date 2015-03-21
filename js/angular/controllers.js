@@ -10,13 +10,12 @@ tripNViewControllers.controller('MapCtrl', ['$scope', '$http', '$q', 'Poi', func
     var local_icons = {
         default_icon: {},
         user_icon: {
-          iconUrl : 'img/pin-green.png'
+          iconUrl : 'img/pin-green.png',
         },
         blue_icon: {
-          iconUrl : 'img/pin-blue.png'
+          iconUrl : 'img/pin-blue.png',
         },
         coupon_icon: {
-          iconUrl : 'img/pin-blue-coupon.png'
         },
     };
 
