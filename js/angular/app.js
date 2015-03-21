@@ -3,7 +3,8 @@ var tripNViewApp = angular.module('tripNViewApp', [
   'ngRoute',
   'tripNViewControllers',
   'leaflet-directive',
-  'monospaced.qrcode'
+  'monospaced.qrcode',
+  'ngSanitize'
 ]);
 
 tripNViewApp.config(['$routeProvider',
