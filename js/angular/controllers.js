@@ -3,10 +3,9 @@ var tripNViewControllers = angular.module('tripNViewControllers', ['tripnwin.ser
 tripNViewControllers.controller('IndexCtrl',
            ['$scope', 'Poi',
   function ( $scope ,  Poi ) {
-    $scope.pois = Poi.list();
 }]);
 
-tripNViewControllers.controller('MapCtrl', ['$scope', '$http', '$q', ,'Poi', function ($scope, $http, $q, Poi) {
+tripNViewControllers.controller('MapCtrl', ['$scope', '$http', '$q', 'Poi', function ($scope, $http, $q, Poi) {
 
     var local_icons = {
         default_icon: {},
@@ -49,7 +48,7 @@ tripNViewControllers.controller('MapCtrl', ['$scope', '$http', '$q', ,'Poi', fun
         $scope.markers[poi.id] = {
           lat     : parseFloat(poi.latitude),
           lng     : parseFloat(poi.longitude),
-          message : '<h5>' + poi.name + '</h5><p>' + poi.description.substring(0,40)+ '... <a href="/poi/' + poi.id +'">Plus...</a></p>',
+          message : '<h5>' + poi.name + '</h5><p>' + poi.description.substring(0,40)+ '... <a href="#/poi/' + poi.id +'">Plus...</a></p>',
           focus: true,
           draggable: false,
           icon : local_icons.default_icon
