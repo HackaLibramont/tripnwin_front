@@ -6,120 +6,15 @@ color:white;
 .content
 
 {
-    margin-top: 50px;
+    margin-top: 60px;
+}
+.container
+{
+	text-align: center;
 }
 
-.navbar-custom {
-  background-color: #8fc9da;
-  border-color: #76bdd2;
-  background-image: -webkit-gradient(linear, left 0%, left 100%, from(#b5dbe7), to(#8fc9da));
-  background-image: -webkit-linear-gradient(top, #b5dbe7, 0%, #8fc9da, 100%);
-  background-image: -moz-linear-gradient(top, #b5dbe7 0%, #8fc9da 100%);
-  background-image: linear-gradient(to bottom, #b5dbe7 0%, #8fc9da 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffb5dbe7', endColorstr='#ff8fc9da', GradientType=0);
-}
-.navbar-custom .navbar-brand {
-  color: #ffffff;
-}
-.navbar-custom .navbar-brand:hover,
-.navbar-custom .navbar-brand:focus {
-  color: #e6e6e6;
-  background-color: transparent;
-}
-.navbar-custom .navbar-text {
-  color: #ffffff;
-}
-.navbar-custom .navbar-nav > li:last-child > a {
-  border-right: 1px solid #76bdd2;
-}
-.navbar-custom .navbar-nav > li > a {
-  color: #ffffff;
-  border-left: 1px solid #76bdd2;
-}
-.navbar-custom .navbar-nav > li > a:hover,
-.navbar-custom .navbar-nav > li > a:focus {
-  color: #fb0085;
-  background-color: transparent;
-}
-.navbar-custom .navbar-nav > .active > a,
-.navbar-custom .navbar-nav > .active > a:hover,
-.navbar-custom .navbar-nav > .active > a:focus {
-  color: #fb0085;
-  background-color: #76bdd2;
-  background-image: -webkit-gradient(linear, left 0%, left 100%, from(#76bdd2), to(#9ccfde));
-  background-image: -webkit-linear-gradient(top, #76bdd2, 0%, #9ccfde, 100%);
-  background-image: -moz-linear-gradient(top, #76bdd2 0%, #9ccfde 100%);
-  background-image: linear-gradient(to bottom, #76bdd2 0%, #9ccfde 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff76bdd2', endColorstr='#ff9ccfde', GradientType=0);
-}
-.navbar-custom .navbar-nav > .disabled > a,
-.navbar-custom .navbar-nav > .disabled > a:hover,
-.navbar-custom .navbar-nav > .disabled > a:focus {
-  color: #cccccc;
-  background-color: transparent;
-}
-.navbar-custom .navbar-toggle {
-  border-color: #dddddd;
-}
-.navbar-custom .navbar-toggle:hover,
-.navbar-custom .navbar-toggle:focus {
-  background-color: #dddddd;
-}
-.navbar-custom .navbar-toggle .icon-bar {
-  background-color: #cccccc;
-}
-.navbar-custom .navbar-collapse,
-.navbar-custom .navbar-form {
-  border-color: #74bcd1;
-}
-.navbar-custom .navbar-nav > .dropdown > a:hover .caret,
-.navbar-custom .navbar-nav > .dropdown > a:focus .caret {
-  border-top-color: #fb0085;
-  border-bottom-color: #fb0085;
-}
-.navbar-custom .navbar-nav > .open > a,
-.navbar-custom .navbar-nav > .open > a:hover,
-.navbar-custom .navbar-nav > .open > a:focus {
-  background-color: #76bdd2;
-  color: #fb0085;
-}
-.navbar-custom .navbar-nav > .open > a .caret,
-.navbar-custom .navbar-nav > .open > a:hover .caret,
-.navbar-custom .navbar-nav > .open > a:focus .caret {
-  border-top-color: #fb0085;
-  border-bottom-color: #fb0085;
-}
-.navbar-custom .navbar-nav > .dropdown > a .caret {
-  border-top-color: #ffffff;
-  border-bottom-color: #ffffff;
-}
-@media (max-width: 767) {
-  .navbar-custom .navbar-nav .open .dropdown-menu > li > a {
-    color: #ffffff;
-  }
-  .navbar-custom .navbar-nav .open .dropdown-menu > li > a:hover,
-  .navbar-custom .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #fb0085;
-    background-color: transparent;
-  }
-  .navbar-custom .navbar-nav .open .dropdown-menu > .active > a,
-  .navbar-custom .navbar-nav .open .dropdown-menu > .active > a:hover,
-  .navbar-custom .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #fb0085;
-    background-color: #76bdd2;
-  }
-  .navbar-custom .navbar-nav .open .dropdown-menu > .disabled > a,
-  .navbar-custom .navbar-nav .open .dropdown-menu > .disabled > a:hover,
-  .navbar-custom .navbar-nav .open .dropdown-menu > .disabled > a:focus {
-    color: #cccccc;
-    background-color: transparent;
-  }
-}
-.navbar-custom .navbar-link {
-  color: #ffffff;
-}
-.navbar-custom .navbar-link:hover {
-  color: #fb0085;
+#titre_perdu
+{
+    text-align: center;
+    color: blue;
 }
