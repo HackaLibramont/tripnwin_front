@@ -8231,3 +8231,138 @@ button.close {
   position: relative;
   margin: 0 auto;
 }
+.btn-facebook {
+  color: #ffffff !important;
+  background-color: #5367a0 !important;
+  border-color: #5367a0 !important;
+}
+.btn-facebook:hover,
+.btn-facebook:focus,
+.btn-facebook.focus,
+.btn-facebook:active,
+.btn-facebook.active,
+.open > .dropdown-toggle.btn-facebook {
+  color: #ffffff !important;
+  background-color: #42517e !important;
+  border-color: #3e4d78 !important;
+}
+.btn-facebook:active,
+.btn-facebook.active,
+.open > .dropdown-toggle.btn-facebook {
+  background-image: none !important;
+}
+.btn-facebook.disabled,
+.btn-facebook[disabled],
+fieldset[disabled] .btn-facebook,
+.btn-facebook.disabled:hover,
+.btn-facebook[disabled]:hover,
+fieldset[disabled] .btn-facebook:hover,
+.btn-facebook.disabled:focus,
+.btn-facebook[disabled]:focus,
+fieldset[disabled] .btn-facebook:focus,
+.btn-facebook.disabled.focus,
+.btn-facebook[disabled].focus,
+fieldset[disabled] .btn-facebook.focus,
+.btn-facebook.disabled:active,
+.btn-facebook[disabled]:active,
+fieldset[disabled] .btn-facebook:active,
+.btn-facebook.disabled.active,
+.btn-facebook[disabled].active,
+fieldset[disabled] .btn-facebook.active {
+  background-color: #5367a0 !important;
+  border-color: #5367a0 !important;
+}
+.btn-facebook .badge {
+  color: #5367a0 !important;
+  background-color: #ffffff !important;
+}
+.btn-twitter {
+  color: #ffffff !important;
+  background-color: #2ca8d2 !important;
+  border-color: #2ca8d2 !important;
+}
+.btn-twitter:hover,
+.btn-twitter:focus,
+.btn-twitter.focus,
+.btn-twitter:active,
+.btn-twitter.active,
+.open > .dropdown-toggle.btn-twitter {
+  color: #ffffff !important;
+  background-color: #2386a8 !important;
+  border-color: #21809f !important;
+}
+.btn-twitter:active,
+.btn-twitter.active,
+.open > .dropdown-toggle.btn-twitter {
+  background-image: none !important;
+}
+.btn-twitter.disabled,
+.btn-twitter[disabled],
+fieldset[disabled] .btn-twitter,
+.btn-twitter.disabled:hover,
+.btn-twitter[disabled]:hover,
+fieldset[disabled] .btn-twitter:hover,
+.btn-twitter.disabled:focus,
+.btn-twitter[disabled]:focus,
+fieldset[disabled] .btn-twitter:focus,
+.btn-twitter.disabled.focus,
+.btn-twitter[disabled].focus,
+fieldset[disabled] .btn-twitter.focus,
+.btn-twitter.disabled:active,
+.btn-twitter[disabled]:active,
+fieldset[disabled] .btn-twitter:active,
+.btn-twitter.disabled.active,
+.btn-twitter[disabled].active,
+fieldset[disabled] .btn-twitter.active {
+  background-color: #2ca8d2 !important;
+  border-color: #2ca8d2 !important;
+}
+.btn-twitter .badge {
+  color: #2ca8d2 !important;
+  background-color: #ffffff !important;
+}
+.btn-googleplus {
+  color: #ffffff !important;
+  background-color: #cf4832 !important;
+  border-color: #cf4832 !important;
+}
+.btn-googleplus:hover,
+.btn-googleplus:focus,
+.btn-googleplus.focus,
+.btn-googleplus:active,
+.btn-googleplus.active,
+.open > .dropdown-toggle.btn-googleplus {
+  color: #ffffff !important;
+  background-color: #a73927 !important;
+  border-color: #9f3625 !important;
+}
+.btn-googleplus:active,
+.btn-googleplus.active,
+.open > .dropdown-toggle.btn-googleplus {
+  background-image: none !important;
+}
+.btn-googleplus.disabled,
+.btn-googleplus[disabled],
+fieldset[disabled] .btn-googleplus,
+.btn-googleplus.disabled:hover,
+.btn-googleplus[disabled]:hover,
+fieldset[disabled] .btn-googleplus:hover,
+.btn-googleplus.disabled:focus,
+.btn-googleplus[disabled]:focus,
+fieldset[disabled] .btn-googleplus:focus,
+.btn-googleplus.disabled.focus,
+.btn-googleplus[disabled].focus,
+fieldset[disabled] .btn-googleplus.focus,
+.btn-googleplus.disabled:active,
+.btn-googleplus[disabled]:active,
+fieldset[disabled] .btn-googleplus:active,
+.btn-googleplus.disabled.active,
+.btn-googleplus[disabled].active,
+fieldset[disabled] .btn-googleplus.active {
+  background-color: #cf4832 !important;
+  border-color: #cf4832 !important;
+}
+.btn-googleplus .badge {
+  color: #cf4832 !important;
+  background-color: #ffffff !important;
+}
