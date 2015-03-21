@@ -3,7 +3,7 @@ var tripNViewControllers = angular.module('tripNViewControllers', ['tripnwin.ser
 tripNViewControllers.controller('IndexCtrl',
            ['$scope', 'Poi',
   function ( $scope ,  Poi ) {
-    console.log(Poi.list());
+    $scope.pois = Poi.list();
 }]);
 
 tripNViewControllers.controller('MapCtrl', ['$scope',

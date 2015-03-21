@@ -2,6 +2,12 @@
     <div class="jumbotron">
       <div class="container">
         <h1>Trip'N'Win</h1>
+
+        <ul>
+          <li ng-repeat="poi in pois">{{ poi.name }}</li>
+        </ul>
+
+
         <p>
 		<a href="#/login" >login<a/>
 		<a href="#/poi" >POI<a/>
