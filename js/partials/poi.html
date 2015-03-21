@@ -24,6 +24,10 @@
             <p class="list-group-item-text">{{ coupon.gain }}</p>
           </a>
         </div>
+        <div class="alert alert-danger" role="alert" ng-if="via_beacon == false">
+          <i class="fa fa-map-marker"></i>
+          Vous devez être à proximité pour jouer
+        </div>
       </div>
     </div>
   </section>
