@@ -24,8 +24,22 @@
         <h1 id="title_loose">Houba !</h1>
           <p>Bravo vous avez bien répondu à la question.</p>
           <p>Partagez cet instant de gloire pour obtenir votre coupon offert par {{ }}</p>
-          <qrcode data="string"></qrcode>
           <a href="#" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-share"></span> Partager</a>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="thumbnail">
+                  <qrcode version="2" error-correction-level="M" size="200" data="string"></qrcode>
+                  <div class="caption">
+                    <h3>Coupon</h3>
+                    <p>...</p>
+                    <p><a href="#" class="btn btn-primary" role="button"></a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
       </div>
     </div>
   </section>

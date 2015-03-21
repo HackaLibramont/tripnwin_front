@@ -9,6 +9,7 @@
     "leaflet": "~0.7",
     "angular-leaflet-directive": "latest",
     "font-awesome": "latest",
-    "monospaced/angular-qrcode" : "latest"
+    "angular-qrcode" : "latest",
+    "qrcode-generator" : "latest"
   }
 }
